@@ -77,10 +77,17 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('.babelrc')
     );
 
-    this.fs.copy(
-      this.templatePath('.gitignore'),
-      this.destinationPath('.gitignore')
-    );
+    try {
+      this.fs.copy(
+        this.templatePath('.gitignore'),
+        this.destinationPath('.gitignore')
+      );
+    } catch (e) {
+      this.fs.copy(
+        this.templatePath('.npmignore'),
+        this.destinationPath('.gitignore')
+      );
+    }
 
     //读取json文件
     var pkg = JSON.parse(this.fs.read(this.templatePath('../../../package.json')));
