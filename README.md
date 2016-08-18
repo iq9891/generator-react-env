@@ -28,7 +28,7 @@ yo react-env
 MIT © [李梦龙](https://github.com/iq9891)
 
 
-[npm-image]: https://badge.fury.io/js/generator-react-env.svg
+[npm-image]: https://badge.fury.io/js/generator-react-env.svg?1
 [npm-url]: https://npmjs.org/package/generator-react-env
 [travis-image]: https://travis-ci.org/iq9891/generator-react-env.svg?branch=master
 [daviddm-image]: https://david-dm.org/iq9891/generator-react-env.svg?theme=shields.io
