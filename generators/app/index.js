@@ -3,8 +3,9 @@
 //cmd 命令
 // 1. sudo npm link //本地安装你的generator
 // 2. npm config set registry https://registry.npm.taobao.org //设置淘宝镜像
-// 3. sudo npm unpublish generator-react-env --force //将包从npm平台下架
-// 4. sudo npm publish --tag generator-react-env //发布到npm平台
+// 3. sudo npm unpublish generator-react-env --force //将包从npm平台下架(发布24小时之内管用)
+// 4. npm version patch 先更新一版，不运行这个，不会再npmjs网站上更新，也不会变成最后版本，只是单纯的发布一个新版
+// 4. sudo npm publish //发布到npm平台
 // 5. 在npm平台更新的方法就是先下架再上传新版(package中更改version)
 // 6. 发布之前先将npm镜像还原(npm config set registry http://registry.npmjs.org)，然后登陆npm(npm login)
 

@@ -1,4 +1,4 @@
-# generator-react-env [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-react-env [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > react-env
 
 ## Installation
@@ -31,7 +31,6 @@ MIT © [李梦龙](https://github.com/iq9891)
 [npm-image]: https://badge.fury.io/js/generator-react-env.svg
 [npm-url]: https://npmjs.org/package/generator-react-env
 [travis-image]: https://travis-ci.org/iq9891/generator-react-env.svg?branch=master
-[travis-url]: https://travis-ci.org/iq9891/generator-react-env
 [daviddm-image]: https://david-dm.org/iq9891/generator-react-env.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/iq9891/generator-react-env
 [coveralls-image]: https://coveralls.io/repos/iq9891/generator-react-env/badge.svg
