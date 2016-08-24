@@ -1,5 +1,16 @@
-$green: #5c1;
-$yellow: yellow;
-body {
-    background: $yellow;
+@import "./Font.scss";
+
+.logo {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background: url(../images/logo.svg) no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+}
+.oh {
+  overflow: hidden;
+}
+.w100 {
+  width: 100%;
 }

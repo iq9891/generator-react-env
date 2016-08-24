@@ -121,7 +121,7 @@ module.exports = yeoman.Base.extend({
       "redux-thunk": "^2.1.0"
     };
     pkg.devDependencies = {
-      "autoprefixer-loader": "^3.2.0",
+      "autoprefixer": "^6.4.0",
       "babel-cli": "^6.11.4",
       "babel-core": "^6.13.2",
       "babel-loader": "^6.2.4",
@@ -132,14 +132,15 @@ module.exports = yeoman.Base.extend({
       "babel-preset-stage-2": "^6.13.0",
       "babel-register": "^6.11.6",
       "body-parser": "^1.15.1",
+      "classnames": "^2.2.5",
       "css-loader": "^0.23.1",
       "extract-text-webpack-plugin": "^1.0.1",
       "file-loader": "^0.9.0",
       "html-webpack-plugin": "^2.22.0",
       "jsx-loader": "^0.13.2",
-      "less": "^2.6.1",
-      "less-loader": "^2.2.3",
       "node-sass": "^3.8.0",
+      "postcss-custom-properties": "^5.0.1",
+      "postcss-loader": "^0.10.1",
       "request": "^2.72.0",
       "sass-loader": "^4.0.0",
       "style-loader": "^0.13.1",

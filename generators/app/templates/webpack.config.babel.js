@@ -1,8 +1,9 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
-let publicPath = '/dist/'; //服务器路径
+let publicPath = ''; //服务器路径
 let path = `${__dirname}/dist/`;
 
 let plugins = [];
@@ -13,13 +14,13 @@ if (process.argv.indexOf('-p') > -1) { //生产环境
             NODE_ENV: JSON.stringify('production')
         }
     }));
-    publicPath = 'dist/';//输出html中js和css资源的目录
-    path = `${__dirname}/react-env/dist/`;//输出的目录
+    publicPath = '';//输出html中js和css资源的目录
+    path = `${__dirname}/react-env/`;//输出的目录
 }
 plugins.push(new ExtractTextPlugin('[name].css')); //css单独打包
 
 plugins.push(new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
-    filename: '../index.html', //生成的html存放路径，相对于 path
+    filename: `${path}/index.html`, //生成的html存放路径，相对于 path
     template: './src/template/index.html', //html模板路径
     hash: true,    //为静态资源生成hash值
 }));
@@ -42,19 +43,15 @@ module.exports = {
             }, {
                 test: /\.css$/,
                 exclude: /^node_modules$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader')
+                loader: ExtractTextPlugin.extract('style', 'css!postcss')
             }, {
                 test: /\.scss/,
                 exclude: /^node_modules$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader!sass-loader')
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
             }, {
-                test: /\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/,
+                test: /\.(eot|woff|svg|ttf|woff2|png|jpg|jpeg|gif|appcache)(\?|$)/,
                 exclude: /^node_modules$/,
-                loader: 'file-loader?name=[name].[ext]'
-            }, {
-                test: /\.(png|jpg)$/,
-                exclude: /^node_modules$/,
-                loader: 'url?limit=20000&name=[name].[ext]' //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
+                loader: 'file?name=[name].[ext]'
             }, {
                 test: /\.jsx$/,
                 exclude: /^node_modules$/,
@@ -62,6 +59,7 @@ module.exports = {
             }
         ]
     },
+    postcss: [autoprefixer],
     plugins,
     resolve: {
         extensions: ['', '.js', '.jsx'], //后缀名自动补全
