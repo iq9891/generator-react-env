@@ -16,7 +16,9 @@
 
 1. 运行 `sudo cnpm i` 安装node依赖包。
 
-2. 运行 `npm run dev` 开始本地开发服务器。打开[http://localhost:3000](http://localhost:3000)
+2. 运行 `npm run dev` 开始本地开发服务器(用于本地开发)。打开[http://localhost:3000](http://localhost:3000)
+
+3. 运行 `npm run test` 开始本地测试服务器(用于本地提供测试)，打开[http://localhost:3001](http://localhost:3001)
 
 ### 构建生产版本
 

@@ -103,8 +103,10 @@ module.exports = yeoman.Base.extend({
     pkg.description = this.props.projectDesc;
     pkg.main = this.props.projectMain;
     pkg.scripts =  {
-      "dev": "babel-node server.js --presets es2015,stage-2",
-      "dist": "webpack --progress --colors -p"
+      "dev": "babel-node server.dev.js --presets es2015,stage-2",
+      "test": "babel-node server.test.js --presets es2015,stage-2",
+      "dist": "webpack --progress --colors -p",
+      "watch": "webpack --watch"
     };
     pkg.keywords = pkg.keywords;
     pkg.dependencies =  {
@@ -133,6 +135,7 @@ module.exports = yeoman.Base.extend({
       "babel-register": "^6.11.6",
       "body-parser": "^1.15.1",
       "classnames": "^2.2.5",
+      "copy-webpack-plugin": "^3.0.1",
       "css-loader": "^0.23.1",
       "extract-text-webpack-plugin": "^1.0.1",
       "file-loader": "^0.9.0",
@@ -143,10 +146,12 @@ module.exports = yeoman.Base.extend({
       "postcss-loader": "^0.10.1",
       "request": "^2.72.0",
       "sass-loader": "^4.0.0",
+      "string-replace-loader": "^1.0.3",
       "style-loader": "^0.13.1",
       "url-loader": "^0.5.7",
       "webpack": "^1.13.0",
-      "webpack-dev-server": "^1.14.1"
+      "webpack-dev-server": "^1.14.1",
+      "webpack-replace": "^1.0.0"
     }
 
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);

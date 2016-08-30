@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM, {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import Demo from './Component/Demo'
+import url from './Actions/testApi'
 
 import './Style/style.scss'; //加载公共样式
 

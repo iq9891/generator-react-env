@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import config from './webpack.config.babel';
+import config from './webpack.dev.config.babel';
 
 // 相当于通过本地node服务代理请求到了http://cnodejs.org/api
 var proxy = [{
